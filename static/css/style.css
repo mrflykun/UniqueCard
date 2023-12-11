@@ -1,0 +1,231 @@
+body {
+  background: hsl(224, 32%, 12%);
+  background-image: conic-gradient(
+    from 0deg at 50% 50%,
+    blue,
+    purple,
+    purple,
+    blue
+  );
+  
+  background-blend-mode: multiply;
+  min-block-size: 100dvh;
+  display: grid;
+  place-items: center;
+  cursor: url("../img/heart.png"), auto;
+}
+
+
+btn{
+  background-image: url("../img/btn1.png");
+  background-repeat: no-repeat;
+  width: 95px;
+  height: 99px;
+  padding-left: 10px;
+  cursor: url("../img/heart.png"), auto;
+}
+
+btn:hover{
+  background-image: url("../img/btn3.png");
+  background-repeat: no-repeat;
+  width: 95px;
+  height: 99px;
+  cursor: url("../img/heart.png"), auto;
+}
+
+btn:active{
+  background-image: url("../img/btn2.png");
+  background-repeat: no-repeat;
+  width: 95px;
+  height: 99px;
+  cursor: url("../img/heart2.png"), auto;
+}
+
+
+pre {
+  
+  --selector: var(--pink);
+  --property: var(--teal);
+  --punctuation: var(--white);
+  --undefined: var(--white);
+
+  background-image: url("../img/cam1.png");
+  width: 321px;
+  height: 447px;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+  
+}
+
+
+
+pre::before,
+pre::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+
+
+pre::before {
+  border-radius: inherit;
+
+  z-index: -1;
+  transform: translateZ(-20px);
+  width: 321px;
+  height: 447px;
+  background-image: url("../img/cam2.gif");
+
+  
+}
+
+
+/* gradient thingy */
+pre::after {
+  z-index: -3;
+
+  background-image: url("../img/cam3.png");
+  width: 321px;
+  height: 447px;
+
+  transform: translateZ(-38px);
+}
+
+pre::backdrop {
+  border-radius: inherit;
+
+  z-index: -2;
+  transform: translateZ(-15px);
+  width: 321px;
+  height: 447px;
+  background-image: url("../img/background0.png");
+
+  
+}
+
+
+.pre-container {
+  position: relative;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  cursor: url("../img/heart2.png"), auto;
+  
+}
+
+/* extras for CSS only */
+
+.css-only pre {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  transition: transform 200ms ease-in-out;
+  
+}
+
+.pre-container.css-only > div {
+  z-index: 10;
+  position: absolute;
+
+}
+
+.pre-container.css-only > div:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(3) {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(4) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(5) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(6) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(7) {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(8) {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(9) {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  inset: 0;
+}
+
+.pre-container.css-only > div:nth-child(1):hover ~ pre {
+  --rotateX: -25deg;
+  --rotateY: 25deg;
+}
+
+.pre-container.css-only > div:nth-child(2):hover ~ pre {
+  --rotateX: 0deg;
+  --rotateY: 25deg;
+}
+
+.pre-container.css-only > div:nth-child(3):hover ~ pre {
+  --rotateX: 25deg;
+  --rotateY: 25deg;
+}
+
+.pre-container.css-only > div:nth-child(4):hover ~ pre {
+  --rotateX: -25deg;
+  --rotateY: 0deg;
+}
+
+.pre-container.css-only > div:nth-child(5):hover ~ pre {
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+}
+
+.pre-container.css-only > div:nth-child(6):hover ~ pre {
+  --rotateX: 25deg;
+  --rotateY: 0deg;
+}
+
+.pre-container.css-only > div:nth-child(7):hover ~ pre {
+  --rotateX: -25deg;
+  --rotateY: -25deg;
+}
+
+.pre-container.css-only > div:nth-child(8):hover ~ pre {
+  --rotateX: 0deg;
+  --rotateY: -25deg;
+}
+
+.pre-container.css-only > div:nth-child(9):hover ~ pre {
+  --rotateX: 25deg;
+  --rotateY: -25deg;
+}
+
